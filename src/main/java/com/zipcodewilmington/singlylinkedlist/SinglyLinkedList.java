@@ -33,24 +33,19 @@ public class SinglyLinkedList<T> implements LinkedListIface {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-
         // add HEAD
         sb.append("head -> ");
-
         // loop thru the list and print each data
         if (head != null) {
             Node<T> temp = head;
             do { // walk to end
-                // print the data...
                 sb.append("["+temp.getData()+"] -> ");
                 temp = temp.getNext();
-            } while((temp != null)); // && temp.hasNext());
+            } while((temp != null));
         }
-
         // add NULL
         sb.append("NULL");
         return sb.toString();
-        //return null;
     }
     @Override
     public void remove(int index) throws IndexOutOfBoundsException {
@@ -74,7 +69,14 @@ public class SinglyLinkedList<T> implements LinkedListIface {
 
     @Override
     public int size() {
-        return 0;
+        if (this.isEmpty()) return 0;
+        int n = 0;
+        Node<T> temp = head;
+        do {
+            n++;
+            temp = temp.getNext();
+        } while (temp != null);
+        return n;
     }
 
     @Override
