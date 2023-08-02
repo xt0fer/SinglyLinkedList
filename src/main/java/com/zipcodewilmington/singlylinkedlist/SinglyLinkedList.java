@@ -59,7 +59,7 @@ public class SinglyLinkedList<T> implements LinkedListIface {
 
     @Override
     public boolean contains(Object data) {
-        return false;
+        return (this.find(data) != -1);
     }
 
     @Override
@@ -99,7 +99,3 @@ public class SinglyLinkedList<T> implements LinkedListIface {
 
     }
 }
-
-
-//public SinglyLinkedList(){}
-//public Boolean isEmpty() {return null;}
